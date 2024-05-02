@@ -1,3 +1,3 @@
 ##  Requirements
 
-Requires python packages **Pygame** and **Screeninfo**.
+Requires python3 packages **Pygame** and **Screeninfo**.
