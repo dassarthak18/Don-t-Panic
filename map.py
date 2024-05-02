@@ -2,8 +2,9 @@ import pygame as pg
 from map_generator import generate_maze
 from settings import *
 
-w = WIDTH // 100
-h = HEIGHT // 100
+scale = 1
+w = WIDTH*scale // 100
+h = HEIGHT*scale // 100
 if w % 2 == 0:
     w -= 1
 if h % 2 == 0:
