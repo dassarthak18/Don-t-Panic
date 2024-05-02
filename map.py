@@ -2,9 +2,10 @@ import pygame as pg
 from map_generator import generate_maze
 from settings import *
 
-scale = 1
-w = WIDTH*scale // 100
-h = HEIGHT*scale // 100
+img_scale = 2
+
+w = WIDTH*img_scale // 100
+h = HEIGHT*img_scale // 100
 if w % 2 == 0:
     w -= 1
 if h % 2 == 0:
@@ -27,5 +28,6 @@ class Map:
                     self.world_map[(i, j)] = value
 
     def draw(self):
-        [pg.draw.rect(self.game.screen, 'white', (pos[0] * 100, pos[1] * 100, 100, 100), 2)
+        modifier = 100
+        [pg.draw.rect(self.game.screen, 'white', (pos[0] * modifier, pos[1] * modifier, modifier, modifier), 2)
          for pos in self.world_map]

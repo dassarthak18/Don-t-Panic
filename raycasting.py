@@ -56,7 +56,7 @@ class RayCasting:
 
             proj_height = SCREEN_DIST / (depth + 0.0001)
             depth_factor = (1 + depth ** 5 * 0.00002)
-            rgb_code = [89, 45, 29]
+            rgb_code = [188, 74, 60]
             color = [i / depth_factor for i in rgb_code]
             pg.draw.rect(self.game.screen, color,
                         (ray * SCALE, HALF_HEIGHT - proj_height // 2, SCALE, proj_height))
