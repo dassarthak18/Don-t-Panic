@@ -1,8 +1,16 @@
 import pygame as pg
 from map_generator import generate_maze
+from settings import *
+
+w = WIDTH // 100
+h = HEIGHT // 100
+if w % 2 == 0:
+    w -= 1
+if h % 2 == 0:
+    h -= 1
 
 _ = False
-mini_map = generate_maze(15,9)
+mini_map = generate_maze(w,h)
 
 class Map:
     def __init__(self, game):
