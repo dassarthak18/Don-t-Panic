@@ -2,7 +2,7 @@ from random import choice, seed
 from datetime import datetime
 
 def visit(x, y, maze, hasVisited, HEIGHT, WIDTH):
-    maze[(x, y)] = '_'
+    maze[(x, y)] = 0
     while True:
         unvisitedNeighbors = []
         if y > 1 and (x, y - 2) not in hasVisited:
@@ -20,19 +20,19 @@ def visit(x, y, maze, hasVisited, HEIGHT, WIDTH):
             if nextIntersection == 'n':
                 nextX = x
                 nextY = y - 2
-                maze[(x, y - 1)] = '_'
+                maze[(x, y - 1)] = 0
             elif nextIntersection == 's':
                 nextX = x
                 nextY = y + 2
-                maze[(x, y + 1)] = '_'
+                maze[(x, y + 1)] = 0
             elif nextIntersection == 'w':
                 nextX = x - 2
                 nextY = y
-                maze[(x - 1, y)] = '_'
+                maze[(x - 1, y)] = 0
             elif nextIntersection == 'e':
                 nextX = x + 2
                 nextY = y
-                maze[(x + 1, y)] = '_'
+                maze[(x + 1, y)] = 0
             hasVisited.append((nextX, nextY))
             visit(nextX, nextY, maze, hasVisited, HEIGHT, WIDTH)
 
@@ -41,7 +41,7 @@ def generate_maze(WIDTH, HEIGHT): # HEIGHT, WIDTH should be odd and > 3 to ensur
   maze = {}
   for x in range(WIDTH):
       for y in range(HEIGHT):
-          maze[(x, y)] = '1'
+          maze[(x, y)] = 1
   hasVisited = [(1, 1)]
   visit(1, 1, maze, hasVisited, HEIGHT, WIDTH)
   map = []
