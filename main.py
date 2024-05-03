@@ -1,4 +1,5 @@
 import pygame as pg
+import cProfile
 import sys
 from settings import *
 from map import *
@@ -27,10 +28,10 @@ class Game:
         self.raycasting.update()
         pg.display.flip()
         self.delta_time = self.clock.tick(FPS)
-        #pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
+        pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
 
     def draw(self):
-        self.screen.fill('sky blue')
+        self.screen.fill('black')
         self.object_renderer.draw()
         #self.map.draw()
         #self.player.draw()
@@ -43,6 +44,9 @@ class Game:
                 sys.exit()
 
     def run(self):
+        cProfile.runctx('self.game_loop()', globals=globals(), locals=locals())
+
+    def game_loop(self):
         while True:
             self.check_events()
             self.update()

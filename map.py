@@ -23,6 +23,9 @@ class Map:
         self.world_map = {}
         self.get_map()
 
+    def get_world_map_dict(self):
+        return {tuple(key): value for key, value in self.world_map.items()}
+
     def get_map(self):
         for j, row in enumerate(self.mini_map):
             for i, value in enumerate(row):

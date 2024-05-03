@@ -29,8 +29,11 @@ class RayCasting:
                 wall_column = pg.transform.scale(wall_column, (SCALE, HEIGHT))
                 wall_pos = (ray * SCALE, 0)
 
+            depth_factor = min(1, 1 / (depth * 0.5))
+            wall_column.fill((255 * depth_factor, 255 * depth_factor, 255 * depth_factor), special_flags=pg.BLEND_MULT)
+
             self.objects_to_render.append((depth, wall_column, wall_pos))
-        
+    
     def ray_cast(self):
         self.ray_casting_result = []
         texture_vert, texture_hor = 1, 1
