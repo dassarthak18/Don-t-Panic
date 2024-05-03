@@ -1,5 +1,5 @@
 import pygame as pg
-from map_generator import generate_maze
+from map_generator import generate_maze, replace_random
 from settings import *
 
 img_scale = 2
@@ -13,6 +13,8 @@ if h % 2 == 0:
 
 _ = False
 mini_map = generate_maze(w,h)
+for _ in range(w*h // 50):
+    mini_map = replace_random(mini_map, 2)
 
 class Map:
     def __init__(self, game):

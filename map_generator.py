@@ -1,5 +1,14 @@
-from random import choice, seed
+from random import choice, seed, randint
 from datetime import datetime
+
+def replace_random(lst, num):
+  while True:
+    seed(datetime.now().timestamp())
+    i = randint(0, len(lst) - 1)
+    j = randint(0, len(lst[0]) - 1)
+    if lst[i][j] == 1:
+        lst[i][j] = num
+        return lst
 
 def visit(x, y, maze, hasVisited, HEIGHT, WIDTH):
     maze[(x, y)] = 0
