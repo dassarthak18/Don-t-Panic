@@ -2,8 +2,6 @@ import pygame as pg
 from map_generator import generate_maze, replace_random
 from settings import *
 
-img_scale = 2
-
 w = WIDTH*img_scale // 100
 h = HEIGHT*img_scale // 100
 if w % 2 == 0:

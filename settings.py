@@ -1,6 +1,8 @@
 import math
 from screeninfo import get_monitors
 
+img_scale = 4
+
 MONITOR = get_monitors()
 WIDTH = MONITOR[0].width
 HEIGHT = MONITOR[0].height
