@@ -40,6 +40,8 @@ class Game:
                 duration = 1
             elif i in [2,4]:
                 duration = 7.5
+            elif i in [0,8]:
+                duration = 4
             else:
                 duration = 2.5
             self.screen.blit(img, (0, 0))
